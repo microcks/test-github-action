@@ -23,6 +23,9 @@ And some optional ones:
 Obviously we can find this action with [GitHub Actions Marketplace](https://github.com/marketplace?type=actions) :wink:
 
 You may add the Action to your Workflow directly from the GitHub UI.
+
+![marketplace](./assets/marketplace.png)
+
 #### Step 1 - Configure the GitHub action
 
 ```yaml
