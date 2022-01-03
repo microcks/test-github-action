@@ -1,19 +1,22 @@
 ## GitHub Action for launching a Microcks test
 ### What is it?
 
-This is a GitHub Action you may use in your Workflow to launch a Microcks test on a deployed API endpoint. If test succeeds (ie. API endpoint is compliant with API contract in Microcks) the workflow is pursuing, if not it fails. This action is basically a wrapper around the [Microcks CLI](https://github.com/microcks/microcks-cli) and provides the same configuration capabilities. 
+This is a GitHub Action you may use in your Workflow to launch a Microcks test on a deployed API endpoint. If test succeeds (ie. API endpoint is compliant with API contract in Microcks) the workflow is pursuing, if not it fails. This action is basically a wrapper around the [Microcks CLI](https://github.com/microcks/microcks-cli) and provides the same configuration capabilities.
 
 The `test` command of the CLI needs 3 arguments:
+
 * `<apiName:apiVersion>` : Service to test reference. Exemple: `'Beer Catalog API:0.9'`
 * `<testEndpoint>` : URL where is deployed implementation to test
-* `<runner>` : Test strategy (one of: `HTTP`, `SOAP`, `SOAP_UI`, `POSTMAN`, `OPEN_API_SCHEMA`, `ASYNC_API_SCHEMA`))
+* `<runner>` : Test strategy (one of: `HTTP`, `SOAP`, `SOAP_UI`, `POSTMAN`, `OPEN_API_SCHEMA`, `ASYNC_API_SCHEMA`, `GRPC_PROTOBUF`, `GRAPHQL_SCHEMA`))
 
 With a bunch of mandatory flags:
+
 * `--microcksURL` for the Microcks API endpoint,
 * `--keycloakClientId` for the Keycloak Realm Service Account ClientId,
 * `--keycloakClientSecret` for the Keycloak Realm Service Account ClientSecret.
 
 And some optional ones:
+
 * `--waitFor` for the time to wait for test to finish (int + one of: milli, sec, min). Default is `5sec`,
 * `--secretName='<Secret Name>'` is an optional flag specifying the name of a Secret to use for connecting endpoint,
 * `--operationsHeaders=<JSON>` allows to override some operations headers for the tests to launch.
@@ -52,4 +55,3 @@ jobs:
 As you probably saw just above, we do think it's a best practice to use GitHub Secrets (general or tied to `Environment` like in the example) to hold the Keycloak credentials (client Id and Secret). See below the Secrets configuration we've used for the example:
 
 ![secret configuration](./assets/secrets.png)
-

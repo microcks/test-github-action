@@ -3,13 +3,13 @@ author: 'Microcks.io'
 description: 'Launch a Microcks test on an API endpoint'
 inputs:
   apiNameAndVersion:
-    description: "<apiName:apiVersion>: Service to test reference. Exemple: 'Beer Catalog API:0.9'"
+    description: "<apiName:apiVersion>: Service to test reference. Example: 'Beer Catalog API:0.9'"
     required: true
   testEndpoint:
     description: 'URL where is deployed implementation to test'
     required: true
   runner:
-    description: 'Test strategy (one of: HTTP, SOAP, SOAP_UI, POSTMAN, OPEN_API_SCHEMA, ASYNC_API_SCHEMA)'
+    description: 'Test strategy (one of: HTTP, SOAP, SOAP_UI, POSTMAN, OPEN_API_SCHEMA, ASYNC_API_SCHEMA, GRPC_PROTOBUF, GRAPHQL_SCHEMA)'
     required: true
     default: 'HTTP'
   microcksURL:
@@ -35,7 +35,7 @@ inputs:
     default: ''
 runs:
   using: 'docker'
-  image: 'docker://quay.io/microcks/microcks-cli:0.3.0'
+  image: 'docker://quay.io/microcks/microcks-cli:0.5.0'
   entrypoint: '/usr/bin/bash'
   args:
   - '-c'
