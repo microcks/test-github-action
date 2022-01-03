@@ -1,7 +1,7 @@
 ## GitHub Action for launching a Microcks test
 ### What is it?
 
-This is a GitHub Action you may use in your Workflow to launch a Microcks test on a deployed API endpoint. If test succeeds (ie. API endpoint is compliant with API contract in Microcks) the workflow is pursuing, if not it fails. This action is basically a wrapper around the [Microcks CLI](https://github.com/microcks/microcks-cli) and provides the same configuration capabilities.
+This is a GitHub Action you may use in your Workflow to launch a Microcks test on a deployed API endpoint. Microcks tests allow you to validate an API endpoint against its OpenAPI specification, AsyncAPI specification or Postman collection definition. If test succeeds (ie. API endpoint is compliant with API contract) the workflow is pursuing, if not it fails. This action is basically a wrapper around the [Microcks CLI](https://github.com/microcks/microcks-cli) and provides the same configuration capabilities.
 
 The `test` command of the CLI needs 3 arguments:
 
