@@ -19,6 +19,7 @@ And some optional ones:
 
 * `--waitFor` for the time to wait for test to finish (int + one of: milli, sec, min). Default is `5sec`,
 * `--secretName='<Secret Name>'` is an optional flag specifying the name of a Secret to use for connecting endpoint,
+* `--filteredOperations=<JSON>` allows to filter a list of operations to launch a test for,
 * `--operationsHeaders=<JSON>` allows to override some operations headers for the tests to launch.
 
 ### How to use it?

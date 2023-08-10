@@ -29,7 +29,7 @@ inputs:
     description: 'The name of a Secret to use for connecting test endpoint'
     required: false
     default: ''
-  filterOperations:
+  filteredOperations:
     description: 'JSON that allows to filter a list of operations to launch a test for'
     required: false
     default: ''
@@ -47,7 +47,7 @@ runs:
     microcks-cli test '${{ inputs.apiNameAndVersion }}' ${{ inputs.testEndpoint }} ${{ inputs.runner }} \
       --microcksURL=${{ inputs.microcksURL }} --waitFor=${{ inputs.waitFor }} --secretName='${{ inputs.secretName }}' \
       --keycloakClientId=${{ inputs.keycloakClientId }} --keycloakClientSecret=${{ inputs.keycloakClientSecret }} \
-      --insecure --filterOperations='${{ inputs.filterOperations }}' --operationsHeaders='${{ inputs.operationsHeaders }}'
+      --insecure --filteredOperations='${{ inputs.filterOperations }}' --operationsHeaders='${{ inputs.operationsHeaders }}'
 branding:
   icon: 'upload-cloud'  
   color: 'blue'
