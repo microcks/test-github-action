@@ -47,7 +47,7 @@ runs:
     microcks-cli test '${{ inputs.apiNameAndVersion }}' ${{ inputs.testEndpoint }} ${{ inputs.runner }} \
       --microcksURL=${{ inputs.microcksURL }} --waitFor=${{ inputs.waitFor }} --secretName='${{ inputs.secretName }}' \
       --keycloakClientId=${{ inputs.keycloakClientId }} --keycloakClientSecret=${{ inputs.keycloakClientSecret }} \
-      --insecure --filteredOperations='${{ inputs.filterOperations }}' --operationsHeaders='${{ inputs.operationsHeaders }}'
+      --insecure --filteredOperations='${{ inputs.filteredOperations }}' --operationsHeaders='${{ inputs.operationsHeaders }}'
 branding:
   icon: 'upload-cloud'  
   color: 'blue'
